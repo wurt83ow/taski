@@ -149,10 +149,10 @@ jobs:
           context: ./gateway/
           push: true    
           tags: wurt83ow/taski_gateway:latest
-          
+
   send_message:
     runs-on: ubuntu-latest
-    needs: deploy
+    needs: build_gateway_and_push_to_docker_hub
     steps:
     - name: Send message
       uses: appleboy/telegram-action@master
